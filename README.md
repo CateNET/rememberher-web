@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+![RememberHer](public/og-image.png)
 
-First, run the development server:
+# RememberHer · Marketing Website
+**Never forget the moments that matter.**  
+Production-grade landing page for the RememberHer mobile app.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+</div>
+
+## ✨ Overview
+
+This repository houses the marketing site for [RememberHer](https://rememberher.app), an AI-powered relationship companion that keeps important moments, preferences, and gift ideas top of mind. The site is fully responsive, brand-aligned, SEO-ready, and deployable to Vercel with zero additional configuration.
+
+## 🧱 Tech Stack
+
+| Layer        | Details                                  |
+|--------------|-------------------------------------------|
+| Framework    | Next.js 14 (App Router, TypeScript)       |
+| Styling      | Tailwind CSS v4 + custom gradients        |
+| Fonts        | Geist Sans / Geist Mono via `next/font`   |
+| SEO          | Next.js Metadata API, `next-seo`, `next-sitemap` |
+| Tooling      | Turbopack, ESLint 9, npm scripts          |
+
+## 🧩 Key Features
+
+- Hero with mock mobile UI + dual CTA
+- Highlights, feature grid, AI & security, “How it works”, audience, FAQ
+- Waitlist form with optimistic success messaging (console logging placeholder)
+- Privacy Policy & Terms of Use pages (last-updated timestamp, brand styling)
+- Sticky header, smooth scrolling, mobile-first layout refinements
+- Brand-matched favicon, Apple touch icon, Open Graph image, PWA manifest
+
+## 📂 Project Structure
+
+```
+src/
+ ├─ app/
+ │   ├─ page.tsx          # Landing page
+ │   ├─ layout.tsx        # Global layout & metadata
+ │   ├─ privacy/page.tsx  # Privacy Policy
+ │   └─ terms/page.tsx    # Terms of Use
+ ├─ components/
+ │   ├─ layout/           # Header, Footer
+ │   ├─ marketing/        # Landing sections
+ │   ├─ seo/              # Structured data helper
+ │   ├─ ui/               # Buttons, badges, sections, cards
+ ├─ lib/                  # Utilities
+public/
+ ├─ og-image.png          # OG/Twitter sharing image
+ ├─ icon-192.png / icon-512.png / apple-touch-icon.png
+ └─ site.webmanifest
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+# Visit http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Scripts**
 
-## Learn More
+- `npm run dev` – Start local dev server (Turbopack)
+- `npm run build` – Production build + sitemap/robots generation
+- `npm run start` – Serve production build
+- `npm run lint` – ESLint checks
 
-To learn more about Next.js, take a look at the following resources:
+## 🔎 SEO & Metadata
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Comprehensive Next.js Metadata API setup (canonical, icons, robots, keywords, manifest, OG/Twitter)
+- JSON-LD via `next-seo` (`OrganizationJsonLd`, `FAQJsonLd`) rendered on the homepage
+- Automated sitemap + robots via `next-sitemap` (runs post-build)
+- Branded favicon + Apple touch icon + gradient heart app icon
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📨 Waitlist Form
 
-## Deploy on Vercel
+`src/components/marketing/WaitlistForm.tsx` currently logs emails to the console and shows a success state. Replace the submit handler with your preferred ESP/API (Supabase, Mailchimp, ConvertKit, etc.).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Ensure environment variables (if any) are configured (none required today).
+2. `npm run build` – verifies the project and generates:
+   - `public/sitemap.xml`, `public/sitemap-0.xml`, `public/robots.txt`
+3. Deploy to [Vercel](https://vercel.com/) or any Next.js-compatible host.
+4. Validate OG/Twitter cards using Facebook Sharing Debugger and Twitter Card Validator.
+
+## ✅ Status Checklist
+
+- [x] Responsive hero & feature layouts
+- [x] Mobile-first spacing + sticky navigation
+- [x] Legal pages with consistent styling
+- [x] Structured data + sitemap + robots
+- [x] Brand-consistent icons + OG image
+
+## 🤝 Contributing
+
+Issues and PRs are welcome! Please run `npm run lint` and `npm run build` before submitting a PR.
+
+---
+
+Built with ❤️ so thoughtful partners never miss a moment.
