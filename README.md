@@ -30,20 +30,23 @@ This repository houses the marketing site for [RememberHer](https://rememberher.
 
 | Layer        | Details                                  |
 |--------------|-------------------------------------------|
-| Framework    | Next.js 14 (App Router, TypeScript)       |
-| Styling      | Tailwind CSS v4 + custom gradients        |
+| Framework    | Next.js 15 (App Router, TypeScript)       |
+| Styling      | Tailwind CSS v4 + `@tailwindcss/postcss` + custom gradients |
 | Fonts        | Geist Sans / Geist Mono via `next/font`   |
 | SEO          | Next.js Metadata API, `next-seo`, `next-sitemap` |
+| Analytics    | Vercel Analytics                          |
 | Tooling      | Turbopack, ESLint 9, npm scripts          |
 
 ## 🧩 Key Features
 
-- Hero with mock mobile UI + dual CTA
-- Highlights, feature grid, AI & security, “How it works”, audience, FAQ
-- Waitlist form with optimistic success messaging (console logging placeholder)
-- Privacy Policy & Terms of Use pages (last-updated timestamp, brand styling)
-- Sticky header, smooth scrolling, mobile-first layout refinements
-- Brand-matched favicon, Apple touch icon, Open Graph image, PWA manifest
+- **Hero Section**: Full-viewport hero with chat-style mobile UI mockup, dual CTAs, and brand-aligned gradients
+- **Feature Showcase**: Partner Management, Smart Reminders, Gift Center, and Date Ideas sections with 2-column layouts
+- **Content Sections**: Highlights, AI & Security, "How it works" timeline, audience personas, and comprehensive FAQ
+- **Waitlist Form**: Email capture with optimistic success messaging (ready for backend integration)
+- **Legal Pages**: Privacy Policy & Terms of Use with dynamic last-updated timestamps and brand styling
+- **Navigation**: Sticky header with smooth scrolling, responsive mobile menu
+- **SEO Optimized**: Comprehensive metadata, structured data (JSON-LD), sitemap, robots.txt, and brand-matched OG images
+- **PWA Ready**: Web manifest, favicon, and Apple touch icons
 
 ## 📂 Project Structure
 
@@ -83,30 +86,74 @@ npm run dev
 
 ## 🔎 SEO & Metadata
 
-- Comprehensive Next.js Metadata API setup (canonical, icons, robots, keywords, manifest, OG/Twitter)
-- JSON-LD via `next-seo` (`OrganizationJsonLd`, `FAQJsonLd`) rendered on the homepage
-- Automated sitemap + robots via `next-sitemap` (runs post-build)
-- Branded favicon + Apple touch icon + gradient heart app icon
+- **Next.js Metadata API**: Comprehensive setup with canonical URLs, icons, robots directives, keywords, manifest, and Open Graph/Twitter Card tags
+- **Structured Data**: JSON-LD via `next-seo` (`OrganizationJsonLd`, `ProductJsonLd`, `FAQJsonLd`) for rich search results
+- **Automated SEO Files**: Sitemap and robots.txt generation via `next-sitemap` (runs post-build)
+- **Brand Assets**: Custom OG image, favicon, Apple touch icons, and PWA icons matching the RememberHer brand
+- **Security Headers**: CSP, HSTS, X-Frame-Options, and other security headers configured in `next.config.ts`
 
 ## 📨 Waitlist Form
 
-`src/components/marketing/WaitlistForm.tsx` currently logs emails to the console and shows a success state. Replace the submit handler with your preferred ESP/API (Supabase, Mailchimp, ConvertKit, etc.).
+The waitlist form (`src/components/marketing/WaitlistForm.tsx`) currently logs emails to the console and displays a success message. 
+
+**To integrate with a backend:**
+1. Replace the `handleSubmit` function in `WaitlistForm.tsx`
+2. Connect to your preferred service:
+   - **Supabase**: Use Supabase client to insert into a table
+   - **Email Service**: Send to Mailchimp, ConvertKit, SendGrid, etc.
+   - **API Route**: Create a Next.js API route (`/api/waitlist`) for custom handling
+
+**Example API route structure:**
+```typescript
+// app/api/waitlist/route.ts
+export async function POST(request: Request) {
+  const { email } = await request.json();
+  // Add your integration logic here
+  return Response.json({ success: true });
+}
+```
 
 ## 📦 Deployment
 
-1. Ensure environment variables (if any) are configured (none required today).
-2. `npm run build` – verifies the project and generates:
-   - `public/sitemap.xml`, `public/sitemap-0.xml`, `public/robots.txt`
-3. Deploy to [Vercel](https://vercel.com/) or any Next.js-compatible host.
-4. Validate OG/Twitter cards using Facebook Sharing Debugger and Twitter Card Validator.
+### Vercel (Recommended)
+
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Import the repository in [Vercel](https://vercel.com/)
+3. Vercel will automatically detect Next.js and configure build settings
+4. Deploy! The site will be live at `https://your-project.vercel.app`
+
+### Manual Build
+
+```bash
+npm run build    # Generates sitemap, robots.txt, and optimized build
+npm run start    # Test production build locally
+```
+
+**Build Output:**
+- Optimized Next.js production build
+- `public/sitemap.xml` and `public/sitemap-0.xml`
+- `public/robots.txt`
+- Static pages pre-rendered
+
+### Post-Deployment
+
+1. Validate OG/Twitter cards:
+   - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+   - [Twitter Card Validator](https://cards-dev.twitter.com/validator)
+2. Test SEO: Check sitemap at `https://rememberher.app/sitemap.xml`
+3. Monitor analytics via Vercel Analytics dashboard
 
 ## ✅ Status Checklist
 
-- [x] Responsive hero & feature layouts
-- [x] Mobile-first spacing + sticky navigation
-- [x] Legal pages with consistent styling
-- [x] Structured data + sitemap + robots
-- [x] Brand-consistent icons + OG image
+- [x] Responsive hero & feature layouts with mobile-first design
+- [x] Sticky navigation with smooth scrolling
+- [x] Legal pages (Privacy Policy & Terms) with dynamic timestamps
+- [x] Comprehensive SEO (structured data, sitemap, robots.txt)
+- [x] Brand-consistent assets (OG image, favicons, icons)
+- [x] Vercel Analytics integration
+- [x] Security headers configured
+- [x] Copyright protection and licensing files
+- [x] Production-ready build configuration
 
 ## ⚖️ License & Copyright
 
