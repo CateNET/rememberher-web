@@ -6,7 +6,7 @@ const personas = [
       "Never miss important moments, even when your calendar is packed. Stay ahead of birthdays, anniversaries, and special dates.",
   },
   {
-    icon: "💑",
+    icon: "👫",
     title: "Long-term partners",
     description:
       "Turn everyday life into thoughtful rituals. Plan traditions, getaways, and annual surprises that keep the spark alive.",
@@ -43,7 +43,7 @@ export function Audience() {
           relationship, RememberHer is for you.
         </p>
       </div>
-      <div className="relative mx-auto mt-16 grid gap-6 md:grid-cols-2">
+      <div className="relative mx-auto mt-16 max-w-7xl grid gap-6 md:grid-cols-2">
         {personas.map((persona) => (
           <div key={persona.title} className="group relative">
             {/* Glow effect */}
