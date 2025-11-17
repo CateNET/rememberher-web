@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-geist-sans), "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0a0d1a;
+  color: #f3ecff;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(255, 128, 181, 0.35);
+  color: #fff;
+}
+
+.bg-blur-ring {
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(255, 128, 181, 0.3), transparent);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* Smooth scroll offset for fixed header */
+section[id] {
+  scroll-margin-top: 80px;
+}

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rememberher.app
+
+# Sitemaps
+Sitemap: https://rememberher.app/sitemap.xml
