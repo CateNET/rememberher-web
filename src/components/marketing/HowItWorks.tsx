@@ -32,7 +32,7 @@ export function HowItWorks() {
           How it works
         </p>
         <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-          From "Oh no, I forgot" to "I already planned it"
+          From "I forgot" to "I planned it"
         </h2>
         <p className="mt-6 text-lg leading-relaxed text-white/70">
           RememberHer guides you with a clear timeline so you can move from
@@ -54,11 +54,14 @@ export function HowItWorks() {
               </div>
               
               {/* Step content */}
-              <div className="flex-1 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur-sm transition hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10">
-                <h3 className="text-2xl font-bold text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-white/70">{step.description}</p>
+              <div className="group relative flex-1 overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur-sm shadow-lg transition-all duration-300 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10 hover:shadow-xl hover:shadow-pink-500/10">
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative">
+                  <h3 className="text-2xl font-bold text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-white/70">{step.description}</p>
+                </div>
               </div>
             </li>
           ))}

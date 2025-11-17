@@ -127,9 +127,10 @@ export function FeaturesGrid() {
                 {section.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-sm backdrop-blur-sm transition hover:border-pink-500/30 hover:bg-white/10"
+                    className="group relative flex items-start gap-3 overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white/5 to-white/[0.02] px-5 py-4 text-sm backdrop-blur-sm shadow-md transition-all duration-300 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10 hover:shadow-lg hover:shadow-pink-500/10"
                   >
-                    <span className="text-white/90">{bullet}</span>
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <span className="relative text-white/90">{bullet}</span>
                   </li>
                 ))}
               </ul>

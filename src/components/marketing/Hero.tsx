@@ -34,7 +34,7 @@ export function Hero() {
         <div className="flex-1 space-y-6 text-center lg:text-left">
           <div className="space-y-4">
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-              RememberHer
+              Remember<span className="bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">Her</span>
             </h1>
             <p className="text-xl text-white/80 sm:text-2xl">
               Never forget the moments that matter.
