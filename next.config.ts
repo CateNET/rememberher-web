@@ -1,9 +1,21 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Optimize for modern browsers - reduce polyfills
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  // Optimize images
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+  // Compress output
+  compress: true,
+  // Headers configuration
   async headers() {
     return [
       {
+        // Security headers for all routes
         source: "/:path*",
         headers: [
           {
@@ -39,6 +51,46 @@ const nextConfig: NextConfig = {
           {
             key: "Cross-Origin-Opener-Policy",
             value: "same-origin",
+          },
+        ],
+      },
+      {
+        // Cache headers for static assets
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache headers for images
+        source: "/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif|woff|woff2|ttf|eot)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache headers for fonts
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache headers for manifest and icons
+        source: "/(favicon.ico|site.webmanifest|icon-*.png|apple-touch-icon.png)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
           },
         ],
       },
