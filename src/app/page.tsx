@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2024 RememberHer. All rights reserved.
+ * Proprietary code - unauthorized use prohibited.
+ */
+
 import { Hero } from "@/components/marketing/Hero";
 import { Highlights } from "@/components/marketing/Highlights";
 import { FeaturesGrid } from "@/components/marketing/FeaturesGrid";

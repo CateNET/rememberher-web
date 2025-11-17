@@ -6,6 +6,20 @@
 **Never forget the moments that matter.**  
 Production-grade landing page for the RememberHer mobile app.
 
+---
+
+**⚠️ PROPRIETARY CODE - UNAUTHORIZED USE PROHIBITED**
+
+Copyright (c) 2024 RememberHer. All rights reserved.
+
+This repository contains proprietary code for the RememberHer marketing website.  
+This code is made available publicly for transparency and reference purposes only.  
+Unauthorized use, copying, modification, or distribution is strictly prohibited.
+
+See [LICENSE](LICENSE), [NOTICE](NOTICE), and [COPYRIGHT](COPYRIGHT) for details.
+
+---
+
 </div>
 
 ## ✨ Overview
@@ -94,9 +108,15 @@ npm run dev
 - [x] Structured data + sitemap + robots
 - [x] Brand-consistent icons + OG image
 
-## 🤝 Contributing
+## ⚖️ License & Copyright
 
-Issues and PRs are welcome! Please run `npm run lint` and `npm run build` before submitting a PR.
+**Copyright (c) 2024 RememberHer. All rights reserved.**
+
+This repository contains proprietary code. This code is made available publicly for transparency and reference purposes only. Unauthorized use, copying, modification, or distribution is strictly prohibited.
+
+See [LICENSE](LICENSE), [NOTICE](NOTICE), and [COPYRIGHT](COPYRIGHT) for complete terms.
+
+For licensing inquiries: **hello@rememberher.app**
 
 ---
 

@@ -139,14 +139,14 @@ export function FeaturesGrid() {
               <div className="relative h-full">
                 {/* Glow effect */}
                 <div className="absolute -inset-1 rounded-[36px] bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-50" />
-                <div className="relative flex h-full flex-col justify-between rounded-[36px] border border-white/20 bg-gradient-to-br from-[#1a1b2e] via-[#0f1019] to-[#080910] p-8 shadow-2xl backdrop-blur-sm">
+                <div className="relative flex h-full flex-col justify-start rounded-[36px] border border-white/20 bg-gradient-to-br from-[#1a1b2e] via-[#0f1019] to-[#080910] p-6 lg:p-8 shadow-2xl backdrop-blur-sm">
                   <div>
                     <p className="text-sm font-semibold text-pink-200/80">{section.preview.title}</p>
                     {section.preview.subtitle && (
                       <p className="mt-1 text-xs text-white/50">{section.preview.subtitle}</p>
                     )}
                   </div>
-                  <div className="mt-6 space-y-3">
+                  <div className="mt-4 lg:mt-5 space-y-3">
                     {section.preview.items.map((item) => (
                       <div
                         key={item.label}
