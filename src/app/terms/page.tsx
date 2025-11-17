@@ -98,7 +98,10 @@ export default function TermsPage() {
               <p className="text-sm uppercase tracking-[0.3em] text-pink-200/80">
                 Terms of Use
               </p>
-              <h1 className="mt-4 text-4xl font-bold sm:text-5xl">
+              <h1 
+                className="mt-4 text-4xl font-bold sm:text-5xl"
+                style={{ fontSize: '2.25rem' }}
+              >
                 Use RememberHer responsibly
               </h1>
               <p className="mt-2 text-sm text-white/60">Last updated: {today}</p>

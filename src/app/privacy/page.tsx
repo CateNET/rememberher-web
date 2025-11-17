@@ -103,7 +103,10 @@ export default function PrivacyPage() {
               <p className="text-sm uppercase tracking-[0.3em] text-pink-200/80">
                 Privacy Policy
               </p>
-              <h1 className="mt-4 text-4xl font-bold sm:text-5xl">
+              <h1 
+                className="mt-4 text-4xl font-bold sm:text-5xl"
+                style={{ fontSize: '2.25rem' }}
+              >
                 Your data, your control
               </h1>
               <p className="mt-2 text-sm text-white/60">Last updated: {today}</p>
