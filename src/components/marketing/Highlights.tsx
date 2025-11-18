@@ -36,13 +36,7 @@ const highlights = [
     icon: "🔔",
     title: "Push Notifications",
     description:
-      "Timely nudges through OneSignal so you can act before it’s too late—not after.",
-  },
-  {
-    icon: "💳",
-    title: "Premium Ready",
-    description:
-      "RevenueCat and Superwall integrations for seamless upgrades when you’re ready for more magic.",
+      "Timely nudges through OneSignal so you can act before it's too late—not after.",
   },
 ];
 

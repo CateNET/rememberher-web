@@ -32,6 +32,12 @@ const aiHighlights = [
     description:
       "Data is encrypted in transit and at rest. You control what's saved, and you can export or delete it anytime.",
   },
+  {
+    icon: "🛡️",
+    title: "Privacy First",
+    description:
+      "Your relationship data never leaves your control. We use industry-standard encryption and never share your information with third parties.",
+  },
 ];
 
 export function AISection() {
@@ -46,14 +52,6 @@ export function AISection() {
         {aiHighlights.map((highlight) => (
           <FeatureCard key={highlight.title} {...highlight} />
         ))}
-      </div>
-      <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 text-base leading-relaxed text-white/70 backdrop-blur-sm">
-        <p>
-          🔄 Forgot password or switching devices? Deep linked password reset
-          flows bring you back into the app securely, while OAuth keeps logins
-          effortless. RememberHer will never spam your partner—we only notify
-          you, the person doing the loving.
-        </p>
       </div>
     </Section>
   );

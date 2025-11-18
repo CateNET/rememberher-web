@@ -18,6 +18,7 @@ const featureSections = [
         { label: "Favorite colors", value: "Black, Pink, Dark Green" },
         { label: "Love languages", value: "Acts of Service · Quality Time" },
         { label: "Go-to brands", value: "Gucci · Prada · Aesop" },
+        { label: "Dream destination", value: "Santorini, Greece" },
       ],
     },
   },
@@ -39,6 +40,7 @@ const featureSections = [
         { label: "Anniversary dinner", value: "Feb 13 · Romantic" },
         { label: "Sushi date night", value: "Dec 15 · Food adventure" },
         { label: "Mother's day reminder", value: "May 11 · Family" },
+        { label: "Birthday surprise", value: "Mar 22 · Celebration" },
       ],
     },
   },
@@ -52,9 +54,7 @@ const featureSections = [
       "💡 AI gift ideas from partner preferences",
       "🔍 More like this: find similar alternatives",
       "💰 Price range tracking and budget monitoring",
-      "🏷️ Brand and store tracking for favorites",
       "📚 Gift history with occasions and reactions",
-      "⭐ Save favorites for later reference",
     ],
     preview: {
       title: "Gift shortlist",
@@ -62,6 +62,7 @@ const featureSections = [
         { label: "Emerald studs", value: "$220 · Loved last year" },
         { label: "Try Tunacado spot", value: "$80 · Date night" },
         { label: "Aire Spa day", value: "$320 · Anniversary" },
+        { label: "Custom perfume", value: "$180 · Special occasion" },
       ],
     },
   },
@@ -75,8 +76,6 @@ const featureSections = [
       "🗓️ AI generated date ideas by category",
       "📍 Location-based suggestions near you",
       "💰 Price range display for each idea",
-      "⭐ Rating and review counts",
-      "📌 Save favorite date spots",
       "🗺️ Maps integration with Google Maps",
     ],
     preview: {
@@ -85,30 +84,21 @@ const featureSections = [
         { label: "Sunset rooftop picnic", value: "$60 · Outdoor · ★4.8" },
         { label: "Private pottery class", value: "$140 · Creative · ★4.6" },
         { label: "Hidden jazz lounge", value: "$90 · Nightlife · ★4.9" },
+        { label: "Wine tasting tour", value: "$120 · Experience · ★4.7" },
       ],
     },
   },
   {
     id: "loveai-assistant",
     label: "LoveAI Assistant",
-    headline: "Your relationship assistant, always ready",
+    headline: "Your assistant, always ready",
     description:
-      "Chat with AI about your partner, analyze images, get advice, and craft perfect messages. All powered by intelligent understanding of your relationship context.",
+      "Chat with AI about your partner, analyze images, get advice, and craft messages. All powered by understanding of your relationship context.",
     bullets: [
       "💬 AI chat interface for personalized advice",
       "📸 Image analysis with smart recognition",
       "💝 Compliment crafting assistance",
-      "📱 Reply to conversation screenshots",
       "🎁 Gift suggestions from images",
-      "🗓️ Date ideas discovered from photos",
-      "👗 Outfit opinions and fashion advice",
-      "😊 Mood interpretation from images",
-      "✍️ Smart message rephrasing",
-      "📝 Text summaries from images",
-      "💕 Personalized relationship guidance",
-      "❓ Contextual help with clarifying questions",
-      "📋 Copy-friendly AI responses",
-      "💖 Beautiful chat UI with heart icon",
     ],
     preview: {
       title: "LoveAI Chat",
@@ -146,10 +136,10 @@ export function FeaturesGrid() {
         {featureSections.map((section, index) => (
           <div
             key={section.id}
-            className="grid items-stretch gap-12 lg:grid-cols-2"
+            className="grid min-h-[400px] items-center gap-12 lg:grid-cols-2 pt-2 first:pt-0"
           >
             <div
-              className={`space-y-6 self-center ${index % 2 === 1 ? "lg:order-2" : ""}`}
+              className={`flex flex-col justify-center space-y-6 ${index % 2 === 1 ? "lg:order-2" : ""}`}
             >
               <div>
                 <p className="text-sm font-bold uppercase tracking-wider text-pink-300">
@@ -160,11 +150,11 @@ export function FeaturesGrid() {
                 </h3>
                 <p className="mt-4 text-lg leading-relaxed text-white/70">{section.description}</p>
               </div>
-              <ul className="space-y-3">
+              <ul className="grid grid-cols-1 gap-3">
                 {section.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="group relative flex items-start gap-3 overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white/5 to-white/[0.02] px-5 py-4 text-sm backdrop-blur-sm shadow-md transition-all duration-300 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10 hover:shadow-lg hover:shadow-pink-500/10"
+                    className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white/5 to-white/[0.02] px-5 py-4 text-sm backdrop-blur-sm shadow-md transition-all duration-300 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10 hover:shadow-lg hover:shadow-pink-500/10"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <span className="relative text-white/90">{bullet}</span>
@@ -172,18 +162,18 @@ export function FeaturesGrid() {
                 ))}
               </ul>
             </div>
-            <div className={`${index % 2 === 1 ? "lg:order-1" : ""} h-full`}>
-              <div className="relative h-full">
+            <div className={`${index % 2 === 1 ? "lg:order-1" : ""} flex items-center`}>
+              <div className="relative w-full">
                 {/* Glow effect */}
                 <div className="absolute -inset-1 rounded-[36px] bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-50" />
-                <div className="relative flex h-full flex-col justify-start rounded-[36px] border border-white/20 bg-gradient-to-br from-[#1a1b2e] via-[#0f1019] to-[#080910] p-6 lg:p-8 shadow-2xl backdrop-blur-sm">
+                <div className="relative flex flex-col rounded-[36px] border border-white/20 bg-gradient-to-br from-[#1a1b2e] via-[#0f1019] to-[#080910] p-6 lg:p-8 shadow-2xl backdrop-blur-sm">
                   <div>
                     <p className="text-sm font-semibold text-pink-200/80">{section.preview.title}</p>
                     {section.preview.subtitle && (
                       <p className="mt-1 text-xs text-white/50">{section.preview.subtitle}</p>
                     )}
                   </div>
-                  <div className="mt-4 lg:mt-5 space-y-3">
+                  <div className="mt-4 lg:mt-5 grid grid-cols-1 gap-3">
                     {section.preview.items.map((item) => (
                       <div
                         key={item.label}
