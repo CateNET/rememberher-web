@@ -22,11 +22,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://va.vercel-scripts.com https://vercel.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://va.vercel-scripts.com https://vercel.com https://www.google.com https://www.gstatic.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "font-src 'self' data:",
-              "connect-src 'self' https://*.supabase.co https://vercel.live https://vitals.vercel-insights.com https://vercel.com",
+              "connect-src 'self' https://*.supabase.co https://vercel.live https://vitals.vercel-insights.com https://vercel.com https://www.google.com https://www.gstatic.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
