@@ -174,9 +174,9 @@ export function FeaturesGrid() {
                     )}
                   </div>
                   <div className="mt-4 lg:mt-5 grid grid-cols-1 gap-3">
-                    {section.preview.items.map((item) => (
+                    {section.preview.items.map((item, itemIndex) => (
                       <div
-                        key={item.label}
+                        key={`${section.id}-preview-${itemIndex}`}
                         className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm transition-all duration-300 hover:border-pink-500/30 hover:bg-white/10 hover:shadow-md"
                       >
                         <p className="text-xs font-medium text-white/60">{item.label}</p>
