@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Allow cross-origin requests from local network during development
+  allowedDevOrigins: [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    /^http:\/\/192\.168\.\d+\.\d+:3000$/,
+    /^http:\/\/10\.\d+\.\d+\.\d+:3000$/,
+    /^http:\/\/172\.(1[6-9]|2[0-9]|3[0-1])\.\d+\.\d+:3000$/,
+  ],
   // Optimize for modern browsers - reduce polyfills
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
