@@ -32,8 +32,9 @@ export function WaitlistForm() {
         return;
       }
 
-      window.grecaptcha.ready(() => {
-        window.grecaptcha
+      const grecaptcha = window.grecaptcha;
+      grecaptcha.ready(() => {
+        grecaptcha
           .execute(siteKey, { action: "waitlist" })
           .then(resolve)
           .catch(reject);
