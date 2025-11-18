@@ -3,11 +3,42 @@
 import { FormEvent, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 
+type Grecaptcha = {
+  ready(callback: () => void): void;
+  execute(siteKey: string, options: { action: string }): Promise<string>;
+};
+
+declare global {
+  interface Window {
+    grecaptcha?: Grecaptcha;
+  }
+}
+
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [message, setMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const requestRecaptchaToken = () =>
+    new Promise<string>((resolve, reject) => {
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      if (!siteKey) {
+        reject(new Error("Missing reCAPTCHA site key"));
+        return;
+      }
+      if (typeof window === "undefined" || !window.grecaptcha) {
+        reject(new Error("reCAPTCHA not loaded"));
+        return;
+      }
+
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(siteKey, { action: "waitlist" })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -16,6 +47,28 @@ export function WaitlistForm() {
     setIsSubmitting(true);
     setStatus("idle");
     setMessage(null);
+
+    try {
+      const token = await requestRecaptchaToken();
+      const verify = await fetch("/api/recaptcha/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      }).then((r) => r.json());
+
+      if (!verify.ok) {
+        setStatus("error");
+        setMessage("Something went wrong. Please try again.");
+        setIsSubmitting(false);
+        return;
+      }
+    } catch (error) {
+      console.error("reCAPTCHA error:", error);
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
 
     const { error } = await supabase
       .from("waitlist")
