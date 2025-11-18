@@ -162,9 +162,9 @@ def main():
     # Draw "Remember" in white
     draw.text((text_start_x, title_y), title_part1, fill="white", font=title_font)
     
-    # Draw "Her" with gradient effect (purple-pink color)
+    # Draw "Her" in on-brand pink to match site accents
     her_x = text_start_x + title1_width + 10  # 10px spacing
-    her_color = "#d946ef"  # Purple-pink gradient color
+    her_color = "#ff80b5"  # Brand pink
     draw.text((her_x, title_y), title_part2, fill=her_color, font=title_font)
     
     # Draw subtitle - centered under the title
