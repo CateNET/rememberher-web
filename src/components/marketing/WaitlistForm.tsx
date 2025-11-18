@@ -1,18 +1,42 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Button } from "@/components/ui/Button";
+import { supabase } from "@/lib/supabaseClient";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [message, setMessage] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!email) return;
-    console.log("Waitlist email:", email);
-    setStatus("success");
-    setEmail("");
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setStatus("idle");
+    setMessage(null);
+
+    const { error } = await supabase
+      .from("waitlist")
+      .insert({ email, source: "marketing_site" });
+
+    if (error) {
+      if (error.code === "23505") {
+        setStatus("error");
+        setMessage("You're already on the list.");
+      } else {
+        setStatus("error");
+        setMessage("Something went wrong. Please try again.");
+        console.error("Supabase waitlist error:", error);
+      }
+    } else {
+      setStatus("success");
+      setMessage("✨ You're on the list! We'll reach out before launch day.");
+      setEmail("");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -51,17 +75,24 @@ export function WaitlistForm() {
                 placeholder="you@email.com"
                 className="flex-1 rounded-full border-2 border-white/20 bg-white/5 px-6 py-4 text-base text-white placeholder:text-white/40 backdrop-blur-sm transition-all duration-300 focus:border-pink-500/50 focus:bg-white/10 focus:outline-none focus:ring-2 focus:ring-pink-500/20"
               />
-              <button
-                type="submit"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/50 sm:w-auto"
-              >
-                <span className="relative z-10">Join the waitlist</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 opacity-0 transition-opacity group-hover:opacity-100" />
-              </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-pink-500 px-8 py-4 text-base font-semibold text-white shadow-2xl shadow-pink-500/30 transition-all duration-300 hover:scale-105 hover:shadow-pink-500/50 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+            >
+              <span className="relative z-10">
+                {isSubmitting ? "Adding..." : "Join the waitlist"}
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 opacity-0 transition-opacity group-hover:opacity-100" />
+            </button>
             </form>
-            {status === "success" ? (
+            {status === "success" && message ? (
               <p className="mt-6 text-base font-medium text-pink-300">
-                ✨ You're on the list! We'll reach out before launch day.
+                {message}
+              </p>
+            ) : status === "error" && message ? (
+              <p className="mt-6 text-base font-medium text-red-300">
+                {message}
               </p>
             ) : (
               <p className="mt-6 text-sm text-white/60">

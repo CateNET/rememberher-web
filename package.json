@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.81.1",
     "@vercel/analytics": "^1.4.1",
     "next": "^15.1.4",
     "next-seo": "^7.0.1",
