@@ -27,6 +27,7 @@ const nextConfig: NextConfig = {
               "img-src 'self' data: https:",
               "font-src 'self' data:",
               "connect-src 'self' https://*.supabase.co https://vercel.live https://vitals.vercel-insights.com https://vercel.com https://www.google.com https://www.gstatic.com",
+              "frame-src 'self' https://www.google.com https://www.gstatic.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
