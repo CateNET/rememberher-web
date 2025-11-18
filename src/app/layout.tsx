@@ -30,17 +30,21 @@ export const metadata: Metadata = {
   },
   applicationName: "RememberHer",
   description:
-    "RememberHer is the AI relationship assistant that remembers anniversaries, gift ideas, and partner preferences so you can show up with confidence.",
+    "RememberHer is the AI relationship assistant with LoveAI chat, image analysis, and smart reminders. Never forget anniversaries, gift ideas, or partner preferences—show up with confidence.",
   alternates: {
     canonical: "https://rememberher.app",
   },
   keywords: [
     "RememberHer",
+    "LoveAI Assistant",
+    "AI relationship assistant",
     "relationship reminders",
     "AI gift ideas",
     "anniversary tracker",
     "partner app",
     "date ideas",
+    "image analysis",
+    "relationship advice",
   ],
   authors: [{ name: "RememberHer" }],
   category: "lifestyle",
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RememberHer – Never forget the moments that matter",
     description:
-      "RememberHer blends AI reminders, gift inspiration, and partner insights so you never miss a meaningful moment again.",
+      "RememberHer with LoveAI Assistant: chat, image analysis, smart reminders, gift inspiration, and partner insights so you never miss a meaningful moment again.",
     url: "https://rememberher.app",
     siteName: "RememberHer",
     images: [
@@ -67,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "RememberHer – Never forget the moments that matter",
     description:
-      "RememberHer blends AI reminders, gift inspiration, and partner insights so you never miss a meaningful moment again.",
+      "RememberHer with LoveAI Assistant: chat, image analysis, smart reminders, gift inspiration, and partner insights so you never miss a meaningful moment again.",
     images: ["/og-image.png"],
   },
   robots: {

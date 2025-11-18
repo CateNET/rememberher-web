@@ -3,10 +3,16 @@ import { Section } from "@/components/ui/Section";
 
 const highlights = [
   {
+    icon: "💬",
+    title: "LoveAI Assistant",
+    description:
+      "Chat with AI about your partner, analyze images, get relationship advice, and craft perfect messages—all in one beautiful interface.",
+  },
+  {
     icon: "🤖",
     title: "AI Powered",
     description:
-      "Summaries, gift suggestions, and date ideas that learn from the details you save about your partner.",
+      "Intelligent summaries, gift suggestions, reminder recommendations, and date ideas that learn from your partner's preferences.",
   },
   {
     icon: "📅",

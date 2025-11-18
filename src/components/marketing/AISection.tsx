@@ -3,10 +3,22 @@ import { FeatureCard } from "@/components/ui/FeatureCard";
 
 const aiHighlights = [
   {
+    icon: "💬",
+    title: "LoveAI Chat Assistant",
+    description:
+      "Ask questions about your partner, get relationship advice, analyze images, and craft perfect messages—all through an intuitive chat interface.",
+  },
+  {
+    icon: "📸",
+    title: "Image Analysis & Recognition",
+    description:
+      "Upload photos and screenshots to get instant insights. AI recognizes outfits, locations, moods, and helps you respond thoughtfully.",
+  },
+  {
     icon: "✨",
     title: "Responsible AI",
     description:
-      "Summaries, reminders, and gift inspiration are generated from the details you choose to store. Nothing is sold or shared.",
+      "All AI features use only the information you choose to store. Nothing is sold, shared, or used for training. Your relationship stays private.",
   },
   {
     icon: "🔐",
@@ -18,7 +30,7 @@ const aiHighlights = [
     icon: "🔒",
     title: "Encrypted & Respectful",
     description:
-      "Data is encrypted in transit and at rest. You control what’s saved, and you can export or delete it anytime.",
+      "Data is encrypted in transit and at rest. You control what's saved, and you can export or delete it anytime.",
   },
 ];
 
@@ -26,11 +38,11 @@ export function AISection() {
   return (
     <Section
       eyebrow="AI & Security"
-      title="Thoughtful AI that protects what matters most"
-      description="RememberHer uses AI to help you act with confidence, not to mine your relationship. Every feature is designed with privacy, transparency, and consent in mind."
+      title="Your intelligent relationship assistant"
+      description="LoveAI Assistant helps you understand, respond, and connect better through chat, image analysis, and personalized guidance—all while keeping your relationship data private and secure."
       align="center"
     >
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {aiHighlights.map((highlight) => (
           <FeatureCard key={highlight.title} {...highlight} />
         ))}

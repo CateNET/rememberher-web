@@ -45,8 +45,8 @@ export function Hero() {
           </div>
           
           <p className="mx-auto max-w-xl text-base leading-relaxed text-white/70 lg:mx-0">
-            The AI assistant that helps you remember birthdays, anniversaries, favorite things, 
-            and all the little details that show you care.
+            Chat with LoveAI, analyze images, get relationship advice, and never forget birthdays, 
+            anniversaries, or the little details that show you care.
           </p>
           
           <div className="flex flex-col items-center gap-4 sm:flex-row lg:items-start">
