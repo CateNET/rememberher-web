@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   authors: [{ name: "RememberHer" }],
   category: "lifestyle",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
@@ -95,7 +95,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-[#0a0d1a] text-white">
+        <div className="bg-[#050814] text-white">
           <Header />
           {children}
           <Footer />

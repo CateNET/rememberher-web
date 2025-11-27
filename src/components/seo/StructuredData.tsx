@@ -21,7 +21,7 @@ const faqEntries = [
   {
     question: "Does it work worldwide?",
     answer:
-      "Yes. Reminders, AI suggestions, and waitlist access function globally. Location-based date ideas adapt to the city you set.",
+      "Yes. Reminders, AI suggestions, and all features function globally. Location-based date ideas adapt to the city you set.",
   },
 ];
 

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   {
@@ -51,47 +54,49 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-[#0a0d1a]">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="border-t border-white/5 bg-[#050814]">
+      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-12 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2">
-          <p>
+          <p className="font-medium text-white/80">
             © {new Date().getFullYear()} RememberHer
           </p>
-          <span className="hidden sm:inline">·</span>
+          <span className="hidden sm:inline text-white/40">·</span>
           <p>
-            Made with ❤️ by{" "}
+            Made with <span className="text-[#E5A855]">♥</span> by{" "}
             <a
               href="https://CateNETSolutions.com"
               target="_blank"
               rel="noreferrer"
-              className="text-pink-300 transition hover:text-pink-200 hover:underline"
+              className="text-[#E5A855] transition hover:text-[#C9A961] hover:underline"
             >
               CateNET Solutions
             </a>
           </p>
         </div>
-        <div className="flex items-center gap-6">
-          <Link href="/support" className="hover:text-white" prefetch={false}>
+        <div className="flex items-center gap-8">
+          <Link href="/support" className="text-white/60 hover:text-white transition-colors font-medium" prefetch={false}>
             Support
           </Link>
-          <Link href="/privacy" className="hover:text-white" prefetch={false}>
+          <Link href="/privacy" className="text-white/60 hover:text-white transition-colors font-medium" prefetch={false}>
             Privacy
           </Link>
-          <Link href="/terms" className="hover:text-white" prefetch={false}>
+          <Link href="/terms" className="text-white/60 hover:text-white transition-colors font-medium" prefetch={false}>
             Terms
           </Link>
           <div className="flex gap-3">
             {socialLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.label}
                 href={link.href}
                 aria-label={link.label}
-                className="flex items-center justify-center rounded-full border border-white/10 p-2 text-white/60 transition hover:border-white/30 hover:text-white"
+                className="flex items-center justify-center rounded-lg border border-white/10 p-2 text-white/60 transition-all hover:border-[#E5A855]/40 hover:text-[#E5A855] hover:bg-[#E5A855]/10"
                 target="_blank"
                 rel="noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {link.icon}
-              </a>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -99,4 +104,3 @@ export function Footer() {
     </footer>
   );
 }
-

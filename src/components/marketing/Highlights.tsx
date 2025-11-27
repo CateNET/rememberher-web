@@ -48,8 +48,9 @@ export function Highlights() {
       title="Quiet assistant for every thoughtful partner"
       description="We blend AI insights with a beautiful reminder system so you always know what to do next."
       align="center"
+      className="bg-gradient-to-b from-[#050814] to-[#0a0f1f]"
     >
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
         {highlights.map((highlight) => (
           <FeatureCard key={highlight.title} {...highlight} />
         ))}
@@ -57,4 +58,3 @@ export function Highlights() {
     </Section>
   );
 }
-

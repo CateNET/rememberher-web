@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Section } from "@/components/ui/Section";
+
 const featureSections = [
   {
     id: "partner-management",
@@ -115,82 +120,93 @@ const featureSections = [
 
 export function FeaturesGrid() {
   return (
-    <section id="features" className="relative px-6 py-24">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,128,181,0.1),_transparent_70%)]" />
+    <Section
+      id="features"
+      eyebrow="Features"
+      title="Built for the memories you never want to miss again"
+      description="Each workspace inside RememberHer combines practical logistics with AI guidance so you can act on what matters, not stress about what you forgot."
+      align="center"
+      className="bg-gradient-to-b from-[#050814] via-[#0a0f1f] to-[#050814]"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(229,168,85,0.06),_transparent_70%)]" />
       
-      <div className="relative mx-auto max-w-4xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-pink-200/80">
-          Features
-        </p>
-        <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-          Built for the memories you never want to miss again
-        </h2>
-        <p className="mt-6 text-lg leading-relaxed text-white/70">
-          Each workspace inside RememberHer combines practical logistics with AI
-          guidance so you can act on what matters, not stress about what you
-          forgot.
-        </p>
-      </div>
-      <div className="relative mx-auto mt-20 flex max-w-7xl flex-col gap-24">
+      <div className="relative mx-auto mt-10 sm:mt-12 lg:mt-16 flex max-w-7xl flex-col gap-12 sm:gap-16 lg:gap-20 xl:gap-24">
         {featureSections.map((section, index) => (
-          <div
+          <motion.div
             key={section.id}
-            className="grid min-h-[400px] items-center gap-12 lg:grid-cols-2 pt-2 first:pt-0"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="grid min-h-0 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12"
           >
             <div
-              className={`flex flex-col justify-center space-y-6 ${index % 2 === 1 ? "lg:order-2" : ""}`}
+              className={`flex flex-col justify-center space-y-4 sm:space-y-5 ${index % 2 === 1 ? "lg:order-2" : ""}`}
             >
               <div>
-                <p className="text-sm font-bold uppercase tracking-wider text-pink-300">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#E5A855] sm:text-sm">
                   {section.label}
                 </p>
-                <h3 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
+                <h3 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl" style={{ letterSpacing: "-0.01em" }}>
                   {section.headline}
                 </h3>
-                <p className="mt-4 text-lg leading-relaxed text-white/70">{section.description}</p>
+                <p className="mt-3 text-base leading-relaxed text-white/70 sm:text-lg">{section.description}</p>
               </div>
-              <ul className="grid grid-cols-1 gap-3">
-                {section.bullets.map((bullet) => (
-                  <li
+              <ul className="grid grid-cols-1 gap-2.5 sm:gap-3">
+                {section.bullets.map((bullet, bulletIndex) => (
+                  <motion.li
                     key={bullet}
-                    className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/20 bg-gradient-to-br from-white/5 to-white/[0.02] px-5 py-4 text-sm backdrop-blur-sm shadow-md transition-all duration-300 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10 hover:shadow-lg hover:shadow-pink-500/10"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: bulletIndex * 0.05 }}
+                    whileHover={{ x: 4 }}
+                    className="group relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#151928]/50 to-[#0c0f18]/50 px-4 py-3 text-sm backdrop-blur-sm shadow-md transition-all duration-300 hover:border-[#E5A855]/30 hover:bg-gradient-to-br hover:from-[#E5A855]/10 hover:to-[#E5A855]/5 hover:shadow-lg hover:shadow-[#E5A855]/10 sm:px-5 sm:py-4"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#E5A855]/5 via-transparent to-[#E5A855]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <span className="relative text-white/90">{bullet}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-            <div className={`${index % 2 === 1 ? "lg:order-1" : ""} flex items-center`}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`${index % 2 === 1 ? "lg:order-1" : ""} flex items-center`}
+            >
               <div className="relative w-full">
                 {/* Glow effect */}
-                <div className="absolute -inset-1 rounded-[36px] bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-50" />
-                <div className="relative flex flex-col rounded-[36px] border border-white/20 bg-gradient-to-br from-[#1a1b2e] via-[#0f1019] to-[#080910] p-6 lg:p-8 shadow-2xl backdrop-blur-sm">
+                <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-[#E5A855]/10 via-[#E5A855]/15 to-[#E5A855]/10 blur-xl opacity-50 sm:rounded-[36px]" />
+                <div className="relative flex flex-col rounded-[32px] border border-white/10 bg-gradient-to-br from-[#151928] via-[#0c0f18] to-[#050814] p-5 shadow-2xl backdrop-blur-sm sm:rounded-[36px] sm:p-6 lg:p-8">
                   <div>
-                    <p className="text-sm font-semibold text-pink-200/80">{section.preview.title}</p>
+                    <p className="text-sm font-semibold text-[#E5A855]/80">{section.preview.title}</p>
                     {section.preview.subtitle && (
                       <p className="mt-1 text-xs text-white/50">{section.preview.subtitle}</p>
                     )}
                   </div>
-                  <div className="mt-4 lg:mt-5 grid grid-cols-1 gap-3">
+                  <div className="mt-4 grid grid-cols-1 gap-2.5 sm:gap-3 lg:mt-5">
                     {section.preview.items.map((item, itemIndex) => (
-                      <div
+                      <motion.div
                         key={`${section.id}-preview-${itemIndex}`}
-                        className="rounded-xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm transition-all duration-300 hover:border-pink-500/30 hover:bg-white/10 hover:shadow-md"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: itemIndex * 0.1 }}
+                        className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm transition-all duration-300 hover:border-[#E5A855]/30 hover:bg-white/10 hover:shadow-md sm:px-5 sm:py-4"
                       >
                         <p className="text-xs font-medium text-white/60">{item.label}</p>
-                        <p className="mt-1 text-base font-semibold text-white">{item.value}</p>
-                      </div>
+                        <p className="mt-1 text-sm font-semibold text-white sm:text-base">{item.value}</p>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
-

@@ -47,6 +47,7 @@ export function AISection() {
       title="Your intelligent relationship assistant"
       description="LoveAI Assistant helps you understand, respond, and connect better through chat, image analysis, and personalized guidance—all while keeping your relationship data private and secure."
       align="center"
+      className="bg-gradient-to-b from-[#0a0f1f] to-[#050814]"
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {aiHighlights.map((highlight) => (
@@ -56,4 +57,3 @@ export function AISection() {
     </Section>
   );
 }
-

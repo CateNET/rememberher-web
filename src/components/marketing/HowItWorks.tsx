@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Section } from "@/components/ui/Section";
+
 const steps = [
   {
     title: "Add your partner",
@@ -17,57 +22,60 @@ const steps = [
   {
     title: "Relax and be present",
     description:
-      "You’ll show up on time, with the right gift, and plenty of time to plan the next surprise.",
+      "You'll show up on time, with the right gift, and plenty of time to plan the next surprise.",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative px-6 py-24">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(169,131,255,0.1),_transparent_70%)]" />
+    <Section
+      id="how-it-works"
+      eyebrow="How it works"
+      title={`From "I forgot" to "I planned it"`}
+      description="RememberHer guides you with a clear timeline so you can move from collecting details to creating gestures that matter."
+      align="center"
+      className="bg-gradient-to-b from-[#050814] via-[#0a0f1f] to-[#050814]"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(229,168,85,0.06),_transparent_70%)]" />
       
-      <div className="relative mx-auto max-w-4xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-pink-200/80">
-          How it works
-        </p>
-        <h2 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-          From "I forgot" to "I planned it"
-        </h2>
-        <p className="mt-6 text-lg leading-relaxed text-white/70">
-          RememberHer guides you with a clear timeline so you can move from
-          collecting details to creating gestures that matter.
-        </p>
-      </div>
-      <div className="relative mx-auto mt-16 max-w-5xl">
-        <ol className="relative space-y-6">
+      <div className="relative mx-auto mt-8 max-w-4xl sm:mt-12 lg:mt-16">
+        <ol className="relative space-y-4 sm:space-y-5 lg:space-y-6">
           {steps.map((step, index) => (
-            <li key={step.title} className="relative flex gap-6">
+            <motion.li
+              key={step.title}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="relative flex gap-4 sm:gap-6"
+            >
               {/* Timeline line */}
               {index < steps.length - 1 && (
-                <div className="absolute left-6 top-16 h-full w-0.5 bg-gradient-to-b from-pink-500/30 to-purple-500/30" />
+                <div className="absolute left-5 top-14 h-full w-0.5 bg-gradient-to-b from-[#E5A855]/30 to-[#E5A855]/10 sm:left-6 sm:top-16" />
               )}
               
               {/* Step number */}
-              <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-pink-500 text-base font-bold text-white shadow-lg shadow-pink-500/30">
+              <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#E5A855] to-[#C9A961] text-sm font-bold text-white shadow-lg shadow-[#E5A855]/30 border-2 border-[#E5A855]/50 sm:h-12 sm:w-12 sm:text-base">
                 {index + 1}
               </div>
               
               {/* Step content */}
-              <div className="group relative flex-1 overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur-sm shadow-lg transition-all duration-300 hover:border-pink-500/30 hover:bg-gradient-to-br hover:from-pink-500/10 hover:to-purple-500/10 hover:shadow-xl hover:shadow-pink-500/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-purple-500/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <motion.div
+                whileHover={{ x: 4 }}
+                className="group relative flex-1 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#151928]/50 to-[#0c0f18]/50 p-5 sm:p-6 lg:p-8 backdrop-blur-sm shadow-lg transition-all duration-300 hover:border-[#E5A855]/30 hover:bg-gradient-to-br hover:from-[#E5A855]/10 hover:to-[#E5A855]/5 hover:shadow-xl hover:shadow-[#E5A855]/10"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#E5A855]/5 via-transparent to-[#E5A855]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="relative">
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white sm:text-2xl">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-white/70">{step.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-white/70 sm:mt-3 sm:text-base">{step.description}</p>
                 </div>
-              </div>
-            </li>
+              </motion.div>
+            </motion.li>
           ))}
         </ol>
       </div>
-    </section>
+    </Section>
   );
 }
-

@@ -8,9 +8,10 @@ import { Highlights } from "@/components/marketing/Highlights";
 import { FeaturesGrid } from "@/components/marketing/FeaturesGrid";
 import { AISection } from "@/components/marketing/AISection";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
+import { Screenshots } from "@/components/marketing/Screenshots";
+import { Testimonials } from "@/components/marketing/Testimonials";
 import { Audience } from "@/components/marketing/Audience";
 import { FAQSection } from "@/components/marketing/FAQSection";
-import { WaitlistForm } from "@/components/marketing/WaitlistForm";
 import { StructuredData } from "@/components/seo/StructuredData";
 
 export default function Home() {
@@ -28,10 +29,9 @@ export default function Home() {
       <div id="how-it-works">
         <HowItWorks />
       </div>
+      <Screenshots />
+      <Testimonials />
       <Audience />
-      <div id="waitlist">
-        <WaitlistForm />
-      </div>
       <div id="faq">
         <FAQSection />
       </div>

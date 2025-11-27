@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Does it work worldwide?",
     answer:
-      "Yes. Reminders, AI suggestions, and waitlist access function globally. Location-based date ideas adapt to the city you set.",
+      "Yes. Reminders, AI suggestions, and all features function globally. Location-based date ideas adapt to the city you set.",
   },
   {
     question: "How do AI suggestions learn?",
@@ -38,9 +38,9 @@ const faqs = [
       "RememberHer focuses on one relationship per workspace to keep boundaries healthy. You can create separate spaces if needed.",
   },
   {
-    question: "How soon will the mobile apps launch?",
+    question: "Where can I download the app?",
     answer:
-      "We’re finalizing the App Store and Google Play builds now. Join the waitlist to be first in line when downloads go live.",
+      "RememberHer is now available on the App Store and Google Play. Download today and start organizing your relationship details with ease.",
   },
 ];
 
@@ -50,10 +50,11 @@ export function FAQSection() {
       id="faq"
       eyebrow="FAQ"
       title="Questions we hear from thoughtful partners"
-      description="If you’re planning ahead for anniversaries, engagements, or just everyday delight, we’ve got you."
+      description="If you're planning ahead for anniversaries, engagements, or just everyday delight, we've got you."
       align="center"
+      className="bg-gradient-to-b from-[#050814] to-[#0a0f1f]"
     >
-      <div className="mx-auto grid max-w-4xl gap-4">
+      <div className="mx-auto grid max-w-4xl gap-2.5 sm:gap-3 lg:gap-4">
         {faqs.map((faq) => (
           <FAQItem key={faq.question} {...faq} />
         ))}
@@ -61,4 +62,3 @@ export function FAQSection() {
     </Section>
   );
 }
-

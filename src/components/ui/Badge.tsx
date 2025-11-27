@@ -14,7 +14,7 @@ export function Badge({
 }: BadgeProps) {
   const styles =
     variant === "glow"
-      ? "bg-gradient-to-r from-pink-500/20 to-purple-500/20 text-white backdrop-blur-sm shadow-[0_0_40px_rgba(255,128,181,0.4)] border border-pink-500/30"
+      ? "bg-gradient-to-r from-[#E5A855]/20 to-[#C9A961]/20 text-white backdrop-blur-sm shadow-[0_0_40px_rgba(229,168,85,0.3)] border border-[#E5A855]/30"
       : "bg-white/5 text-white/80 border border-white/10";
 
   return (
@@ -29,4 +29,3 @@ export function Badge({
     </span>
   );
 }
-

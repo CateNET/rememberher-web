@@ -27,30 +27,30 @@ def draw_heart(draw, center_x, center_y, size, fill_color):
 
 def main():
     # Create image with brand dark background
-    img = Image.new("RGB", (WIDTH, HEIGHT), "#0a0d1a")
+    img = Image.new("RGB", (WIDTH, HEIGHT), "#050814")
     draw = ImageDraw.Draw(img)
     
-    # Add subtle gradient background (dark indigo to purple)
+    # Add subtle gradient background (dark to slightly lighter dark)
     for i in range(HEIGHT):
         ratio = i / HEIGHT
-        # Gradient from #0a0d1a to #1a1b2e
-        r = int(10 + ratio * (26 - 10))
-        g = int(13 + ratio * (27 - 13))
-        b = int(26 + ratio * (46 - 26))
+        # Gradient from #050814 to #0a0f1f
+        r = int(5 + ratio * (10 - 5))
+        g = int(8 + ratio * (15 - 8))
+        b = int(20 + ratio * (31 - 20))
         draw.line([(0, i), (WIDTH, i)], fill=(r, g, b))
     
-    # Add subtle radial gradient overlay (pink/purple glow in center)
+    # Add subtle radial gradient overlay (gold glow in center)
     overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
     overlay_draw = ImageDraw.Draw(overlay)
     center_x, center_y = WIDTH // 2, HEIGHT // 2
     
-    # Create radial glow
+    # Create radial glow with gold
     for radius in range(500, 0, -20):
         alpha = int(8 * (1 - radius / 500))
         if alpha > 0:
             overlay_draw.ellipse(
                 [center_x - radius, center_y - radius, center_x + radius, center_y + radius],
-                fill=(255, 128, 181, alpha)  # Pink glow
+                fill=(229, 168, 85, alpha)  # Gold glow
             )
     img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
     draw = ImageDraw.Draw(img)
@@ -121,13 +121,13 @@ def main():
             glow_draw.ellipse(
                 [heart_x - glow_size // 2, heart_y - glow_size // 2, 
                  heart_x + glow_size // 2, heart_y + glow_size // 2],
-                fill=(255, 23, 68, alpha)
+                fill=(229, 168, 85, alpha)  # Gold glow
             )
     img = Image.alpha_composite(img.convert("RGBA"), glow_overlay).convert("RGB")
     draw = ImageDraw.Draw(img)
     
     # Draw the heart
-    draw_heart(draw, heart_x, heart_y, heart_size, "#ff1744")  # Vibrant red
+    draw_heart(draw, heart_x, heart_y, heart_size, "#E5A855")  # Gold
     
     # Add highlight on heart
     highlight_overlay = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
@@ -162,9 +162,9 @@ def main():
     # Draw "Remember" in white
     draw.text((text_start_x, title_y), title_part1, fill="white", font=title_font)
     
-    # Draw "Her" in on-brand pink to match site accents
+    # Draw "Her" in on-brand gold to match site accents
     her_x = text_start_x + title1_width + 10  # 10px spacing
-    her_color = "#ff80b5"  # Brand pink
+    her_color = "#E5A855"  # Brand gold
     draw.text((her_x, title_y), title_part2, fill=her_color, font=title_font)
     
     # Draw subtitle - centered under the title
@@ -188,9 +188,9 @@ def main():
             alpha = int(12 * intensity)
             if alpha > 0:
                 color = (
-                    int(255 * intensity),
-                    int(128 * intensity),
-                    int(181 * intensity)
+                    int(229 * intensity),
+                    int(168 * intensity),
+                    int(85 * intensity)
                 )
                 draw.line([(x, y_pos), (x + 1, y_pos)], fill=color)
     
