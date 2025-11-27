@@ -1,13 +1,33 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Section } from "@/components/ui/Section";
 
+// Screenshot configuration - Add your app screenshots to public/screenshots/
+// Expected files: screenshot-1.png, screenshot-2.png, screenshot-3.png, screenshot-4.png
 const screenshots = [
-  { id: 1, alt: "App screenshot 1" },
-  { id: 2, alt: "App screenshot 2" },
-  { id: 3, alt: "App screenshot 3" },
-  { id: 4, alt: "App screenshot 4" },
+  { 
+    id: 1, 
+    src: "/screenshots/screenshot-1.png", 
+    alt: "RememberHer app - Partner management screen" 
+  },
+  { 
+    id: 2, 
+    src: "/screenshots/screenshot-2.png", 
+    alt: "RememberHer app - Smart reminders and notifications" 
+  },
+  { 
+    id: 3, 
+    src: "/screenshots/screenshot-3.png", 
+    alt: "RememberHer app - AI-powered gift suggestions" 
+  },
+  { 
+    id: 4, 
+    src: "/screenshots/screenshot-4.png", 
+    alt: "RememberHer app - LoveAI chat assistant" 
+  },
 ];
 
 export function Screenshots() {
@@ -36,9 +56,9 @@ export function Screenshots() {
             
             {/* Black titanium style phone frame */}
             <div className="relative rounded-[40px] border-2 border-white/10 bg-gradient-to-b from-[#0a0f1f] to-[#050814] p-3 shadow-2xl backdrop-blur-sm">
-              <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#151928] to-[#0c0f18] flex items-center justify-center overflow-hidden border border-white/5">
-                {/* Placeholder for screenshot */}
-                <div className="text-white/10 text-6xl">📱</div>
+              <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#151928] to-[#0c0f18] flex items-center justify-center overflow-hidden border border-white/5 relative">
+                {/* App Screenshot with fallback */}
+                <ScreenshotImage src={screenshot.src} alt={screenshot.alt} />
               </div>
             </div>
           </motion.div>
@@ -48,3 +68,31 @@ export function Screenshots() {
   );
 }
 
+// Helper component for screenshots with fallback
+function ScreenshotImage({ src, alt }: { src: string; alt: string }) {
+  const [hasError, setHasError] = React.useState(false);
+
+  if (hasError) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center text-white/10 text-6xl">
+        📱
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover rounded-[32px]"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+        onError={() => setHasError(true)}
+      />
+      <div className="absolute inset-0 flex items-center justify-center text-white/10 text-6xl pointer-events-none opacity-0">
+        📱
+      </div>
+    </>
+  );
+}

@@ -1,0 +1,15 @@
+# Hero Screenshots
+
+Place your hero section app screenshots here:
+- hero-1.png (front phone - main app screen)
+- hero-2.png (behind phone - secondary feature)
+- hero-3.png (furthest phone - tertiary feature)
+
+Image specifications:
+- Aspect ratio: 9:19.5 (portrait, iPhone-like)
+- Recommended size: 810x1755px or larger (for retina displays)
+- Format: PNG with transparency or JPG
+- Content: App screenshots showing your RememberHer interface
+
+The images will be automatically optimized by Next.js and displayed in the hero section's stacked phone mockups.
+

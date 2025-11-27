@@ -1,6 +1,8 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   const scrollToHowItWorks = () => {
@@ -9,6 +11,14 @@ export function Hero() {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  // Hero screenshots - Add your app screenshots to public/hero/
+  // Expected files: hero-1.png, hero-2.png, hero-3.png
+  const heroScreenshots = [
+    { src: "/hero/hero-1.png", alt: "RememberHer app main screen", priority: true },
+    { src: "/hero/hero-2.png", alt: "RememberHer app features", priority: false },
+    { src: "/hero/hero-3.png", alt: "RememberHer app insights", priority: false },
+  ];
 
   return (
     <section
@@ -157,8 +167,8 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="relative rounded-[40px] border-2 border-white/10 bg-gradient-to-b from-[#151928] to-[#0c0f18] p-2.5 shadow-2xl backdrop-blur-sm"
               >
-                <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#1a1f2e] to-[#0f1418] flex items-center justify-center overflow-hidden">
-                  <div className="text-white/20 text-2xl">📱</div>
+                <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#1a1f2e] to-[#0f1418] flex items-center justify-center overflow-hidden relative">
+                  <HeroScreenshot src={heroScreenshots[0].src} alt={heroScreenshots[0].alt} priority={heroScreenshots[0].priority} />
                 </div>
               </motion.div>
               
@@ -169,8 +179,8 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="absolute -top-2 left-5 w-full rounded-[40px] border-2 border-white/5 bg-gradient-to-b from-[#151928] to-[#0c0f18] p-2.5 shadow-2xl backdrop-blur-sm -rotate-6 scale-95"
               >
-                <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#1a1f2e] to-[#0f1418] flex items-center justify-center">
-                  <div className="text-white/10 text-2xl">📱</div>
+                <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#1a1f2e] to-[#0f1418] flex items-center justify-center overflow-hidden relative">
+                  <HeroScreenshot src={heroScreenshots[1].src} alt={heroScreenshots[1].alt} priority={heroScreenshots[1].priority} />
                 </div>
               </motion.div>
               
@@ -181,8 +191,8 @@ export function Hero() {
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="absolute -top-5 right-5 w-full rounded-[40px] border-2 border-white/5 bg-gradient-to-b from-[#151928] to-[#0c0f18] p-2.5 shadow-2xl backdrop-blur-sm rotate-6 scale-90"
               >
-                <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#1a1f2e] to-[#0f1418] flex items-center justify-center">
-                  <div className="text-white/5 text-2xl">📱</div>
+                <div className="aspect-[9/19.5] rounded-[32px] bg-gradient-to-br from-[#1a1f2e] to-[#0f1418] flex items-center justify-center overflow-hidden relative">
+                  <HeroScreenshot src={heroScreenshots[2].src} alt={heroScreenshots[2].alt} priority={heroScreenshots[2].priority} />
                 </div>
               </motion.div>
             </div>
@@ -209,5 +219,37 @@ export function Hero() {
         </motion.div>
       </motion.div>
     </section>
+  );
+}
+
+// Helper component for hero screenshots with fallback
+function HeroScreenshot({ src, alt, priority }: { src: string; alt: string; priority: boolean }) {
+  const [imageError, setImageError] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new window.Image();
+    img.onerror = () => setImageError(true);
+    img.onload = () => setImageError(false);
+    img.src = src;
+  }, [src]);
+
+  if (imageError) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center text-white/20 text-2xl">
+        📱
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover rounded-[32px]"
+      priority={priority}
+      sizes="(max-width: 1024px) 0vw, 240px"
+      onError={() => setImageError(true)}
+    />
   );
 }

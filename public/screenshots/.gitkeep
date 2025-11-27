@@ -1,0 +1,16 @@
+# Screenshots Section Images
+
+Place your app screenshots here for the Screenshots section:
+- screenshot-1.png (Partner management screen)
+- screenshot-2.png (Smart reminders)
+- screenshot-3.png (AI gift suggestions)
+- screenshot-4.png (LoveAI chat)
+
+Image specifications:
+- Aspect ratio: 9:19.5 (portrait, iPhone-like)
+- Recommended size: 810x1755px or larger (for retina displays)
+- Format: PNG with transparency or JPG
+- Content: App screenshots showcasing different features of RememberHer
+
+The images will be automatically optimized by Next.js and displayed in the screenshots grid section.
+
