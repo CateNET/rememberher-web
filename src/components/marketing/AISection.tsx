@@ -6,7 +6,7 @@ const aiHighlights = [
     icon: "💬",
     title: "LoveAI Chat Assistant",
     description:
-      "Ask questions about your partner, get relationship advice, analyze images, and craft perfect messages—all through an intuitive chat interface.",
+      "Ask questions about your partner, get relationship advice, analyze images, and craft perfect messages. All through an intuitive chat interface.",
   },
   {
     icon: "📸",
@@ -24,7 +24,7 @@ const aiHighlights = [
     icon: "🔐",
     title: "Authentication & Security",
     description:
-      "Supabase Auth with email/password plus Google and Apple Sign In. Sensitive data is secured with Expo SecureStore.",
+      "Secure sign-in with email, Google, or Apple. Your sensitive data stays protected with enterprise-grade security.",
   },
   {
     icon: "🔒",
@@ -45,7 +45,7 @@ export function AISection() {
     <Section
       eyebrow="AI & Security"
       title="Your intelligent relationship assistant"
-      description="LoveAI Assistant helps you understand, respond, and connect better through chat, image analysis, and personalized guidance—all while keeping your relationship data private and secure."
+      description="LoveAI Assistant helps you understand, respond, and connect better through chat, image analysis, and personalized guidance. All while keeping your relationship data private and secure."
       align="center"
       className="bg-gradient-to-b from-[#0a0f1f] to-[#050814]"
     >

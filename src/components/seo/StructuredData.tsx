@@ -6,12 +6,12 @@ const faqEntries = [
   {
     question: "Is my data private?",
     answer:
-      "Absolutely. Your entries stay encrypted with Supabase. We never sell data, and you control what is stored or deleted.",
+      "Absolutely. Your entries are encrypted and secure. We never sell data, and you control what is stored or deleted.",
   },
   {
     question: "Do I need a subscription to use it?",
     answer:
-      "Core partner management and reminders are free. Premium tiers unlock deeper AI insights, historical analytics, and upcoming integrations via RevenueCat.",
+      "Core partner management and reminders are free. Premium tiers unlock deeper AI insights, historical analytics, and exclusive features.",
   },
   {
     question: "Will this spam my partner?",

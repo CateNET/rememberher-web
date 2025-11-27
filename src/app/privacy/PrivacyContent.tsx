@@ -42,22 +42,22 @@ const sections: Array<{
     icon: "🛡️",
     title: "Data Storage and Security",
     content: [
-      "Your information is stored securely using modern encryption and industry standard protections.",
-      "We use trusted third party services such as Supabase and Expo Auth for hosting and authentication.",
+      "Your information is stored securely using modern encryption and industry-standard protections.",
+      "We use enterprise-grade infrastructure and security protocols to keep your data safe.",
     ],
   },
   {
     icon: "📩",
     title: "Third Party Services",
     content: [
-      "We only share essential data with service providers that help us operate the app.",
-      "This may include:",
+      "We work with trusted service providers to deliver RememberHer's features securely.",
+      "These partnerships help us provide:",
       [
-        "Supabase for database and authentication",
-        "RevenueCat for subscription management",
-        "OpenAI for processing AI generated responses",
+        "Secure data storage and authentication",
+        "Reliable subscription management",
+        "Advanced AI capabilities for personalized features",
       ],
-      "These services are used only to operate RememberHer. They do not have permission to use your info for marketing.",
+      "All service providers are contractually required to protect your data and cannot use your information for marketing purposes.",
     ],
   },
   {

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   applicationName: "RememberHer",
   description:
-    "RememberHer is the AI relationship assistant with LoveAI chat, image analysis, and smart reminders. Never forget anniversaries, gift ideas, or partner preferences—show up with confidence.",
+    "RememberHer is the AI relationship assistant with LoveAI chat, image analysis, and smart reminders. Never forget anniversaries, gift ideas, or partner preferences. Show up with confidence.",
   alternates: {
     canonical: "https://rememberher.app",
   },

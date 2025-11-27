@@ -7,7 +7,7 @@ const steps = [
   {
     title: "Add your partner",
     description:
-      "Start with the essentials—photos, favorites, and the small details that make them light up.",
+      "Start with the essentials: photos, favorites, and the small details that make them light up.",
   },
   {
     title: "Save key dates and preferences",

@@ -6,19 +6,19 @@ import { Section } from "@/components/ui/Section";
 const testimonials = [
   {
     name: "James M.",
-    role: "Software Engineer",
+    source: "App Store",
     content: "RememberHer has transformed how I approach our relationship. Never missing an anniversary again.",
     initials: "JM",
   },
   {
     name: "Michael R.",
-    role: "Investment Banker",
+    source: "Google Play",
     content: "The AI insights help me surprise her with exactly what she wants. Game changer for busy professionals.",
     initials: "MR",
   },
   {
     name: "David K.",
-    role: "Entrepreneur",
+    source: "App Store",
     content: "Finally, a tool that understands what thoughtful partners need. Beautiful design meets practical functionality.",
     initials: "DK",
   },
@@ -67,7 +67,7 @@ export function Testimonials() {
                 
                 <div>
                   <p className="text-sm font-bold text-white">{testimonial.name}</p>
-                  <p className="mt-1 text-xs text-white/60">{testimonial.role}</p>
+                  <p className="mt-1 text-xs text-white/60">{testimonial.source}</p>
                 </div>
               </div>
             </div>

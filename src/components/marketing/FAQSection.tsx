@@ -5,12 +5,12 @@ const faqs = [
   {
     question: "Is my data private?",
     answer:
-      "Absolutely. Your entries stay encrypted with Supabase. We never sell data, and you control what is stored or deleted.",
+      "Absolutely. Your entries are encrypted and secure. We never sell data, and you control what is stored or deleted.",
   },
   {
     question: "Do I need a subscription to use it?",
     answer:
-      "Core partner management and reminders are free. Premium tiers unlock deeper AI insights, historical analytics, and upcoming integrations via RevenueCat.",
+      "Core partner management and reminders are free. Premium tiers unlock deeper AI insights, historical analytics, and exclusive features.",
   },
   {
     question: "Will this spam my partner?",
@@ -25,12 +25,12 @@ const faqs = [
   {
     question: "How do AI suggestions learn?",
     answer:
-      "They use the preferences you save—favorite colors, cuisines, hobbies—and combine them with seasonal inspiration. You can edit or reset insights anytime.",
+      "They use the preferences you save, like favorite colors, cuisines, and hobbies, and combine them with seasonal inspiration. You can edit or reset insights anytime.",
   },
   {
     question: "What happens if I switch phones?",
     answer:
-      "Sign in with Supabase Auth, Google, or Apple and everything syncs instantly. SecureStore keeps sensitive tokens protected.",
+      "Sign in with your email, Google, or Apple account and everything syncs instantly across all your devices. Your data stays secure and protected.",
   },
   {
     question: "Can I track multiple partners?",

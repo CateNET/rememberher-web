@@ -6,7 +6,7 @@ const highlights = [
     icon: "💬",
     title: "LoveAI Assistant",
     description:
-      "Chat with AI about your partner, analyze images, get relationship advice, and craft perfect messages—all in one beautiful interface.",
+      "Chat with AI about your partner, analyze images, get relationship advice, and craft perfect messages. All in one beautiful interface.",
   },
   {
     icon: "🤖",
@@ -18,7 +18,7 @@ const highlights = [
     icon: "📅",
     title: "Smart Reminders",
     description:
-      "Birthdays, anniversaries, half-birthdays—whatever matters to the two of you, RememberHer keeps it top of mind.",
+      "Birthdays, anniversaries, half-birthdays. Whatever matters to the two of you, RememberHer keeps it top of mind.",
   },
   {
     icon: "🎁",
@@ -30,13 +30,13 @@ const highlights = [
     icon: "📸",
     title: "Photo Vault",
     description:
-      "Secure cloud storage powered by Supabase keeps important photos and notes in one organized place.",
+      "Secure cloud storage keeps your important photos and notes safe and organized, accessible anywhere.",
   },
   {
     icon: "🔔",
     title: "Push Notifications",
     description:
-      "Timely nudges through OneSignal so you can act before it's too late—not after.",
+      "Timely nudges delivered right to your phone so you can act before it's too late, not after.",
   },
 ];
 

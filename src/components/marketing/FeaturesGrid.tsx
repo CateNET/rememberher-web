@@ -9,10 +9,10 @@ const featureSections = [
     label: "Partner Management",
     headline: "Sweet details organized",
     description:
-      "Capture everything that makes them smile—flowers, ring size, dream trips, and inside jokes. AI summarizes so you can recall details instantly.",
+      "Capture everything that makes them smile: flowers, ring size, dream trips, and inside jokes. AI summarizes so you can recall details instantly.",
     bullets: [
       "📝 Comprehensive partner information storage",
-      "🖼️ Profile photos kept safe with Supabase Storage",
+      "🖼️ Secure cloud storage for photos and memories",
       "🤖 AI generated preference summaries",
       "✏️ Effortless editing across devices",
     ],
@@ -37,7 +37,7 @@ const featureSections = [
       "📅 Flexible repeat intervals: none to yearly",
       "🏷️ Category organization with color-coded chips",
       "✨ AI suggested reminders based on context",
-      "🔔 Push notifications powered by OneSignal",
+      "🔔 Smart push notifications right when you need them",
     ],
     preview: {
       title: "Upcoming moments",
@@ -98,7 +98,7 @@ const featureSections = [
     label: "LoveAI Assistant",
     headline: "Your assistant, always ready",
     description:
-      "Chat with AI about your partner, analyze images, get advice, and craft messages. All powered by understanding of your relationship context.",
+      "Chat with AI about your partner, analyze images, get advice, and craft messages. All designed to understand and enhance your unique relationship.",
     bullets: [
       "💬 AI chat interface for personalized advice",
       "📸 Image analysis with smart recognition",
