@@ -60,19 +60,18 @@ export function Hero() {
           className="flex-1 space-y-2.5 text-center sm:space-y-3 lg:text-left"
         >
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-2xl font-bold leading-[1.1] tracking-tight text-white sm:text-3xl sm:leading-tight md:text-4xl lg:text-5xl"
-              style={{ letterSpacing: "-0.02em" }}
-            >
-              The modern gentleman's
-              <br className="hidden xs:block" />
-              <span className="bg-gradient-to-r from-[#E5A855] to-[#C9A961] bg-clip-text text-transparent">
-                relationship assistant
-              </span>
-            </motion.h1>
+          <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-2xl font-bold leading-[1.1] tracking-tight text-white sm:text-3xl sm:leading-tight md:text-4xl lg:text-5xl"
+      style={{ letterSpacing: "-0.02em" }}
+        >
+      The modern gentleman's{"\u00A0"} <br className="hidden xs:block" />
+      <span className="bg-gradient-to-r from-[#E5A855] to-[#C9A961] bg-clip-text text-transparent">
+      relationship assistant
+     </span></motion.h1>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
