@@ -26,6 +26,8 @@ See [LICENSE](LICENSE), [NOTICE](NOTICE), and [COPYRIGHT](COPYRIGHT) for details
 
 This repository houses the marketing site for [RememberHer](https://rememberher.app), an AI-powered relationship companion that keeps important moments, preferences, and gift ideas top of mind. The site is fully responsive, brand-aligned, SEO-ready, and deployable to Vercel with zero additional configuration.
 
+**Download the app:** [App Store](https://apps.apple.com/us/app/rememberher-relationship-ai/id6755442535)
+
 ## 🧱 Tech Stack
 
 | Layer        | Details                                  |
