@@ -99,7 +99,7 @@ export function Hero() {
             className="flex flex-col items-stretch w-full sm:w-auto sm:flex-row sm:items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2"
           >
             <a
-              href="https://apps.apple.com/app/rememberher"
+              href="https://apps.apple.com/us/app/rememberher-relationship-ai/id6755442535"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-block transition-transform active:scale-95 w-full sm:w-auto"
@@ -117,6 +117,7 @@ export function Hero() {
                 </div>
               </div>
             </a>
+            {/* Google Play button - commented out until app is available on Google Play
             <a
               href="https://play.google.com/store/apps/details?id=app.rememberher"
               target="_blank"
@@ -136,6 +137,7 @@ export function Hero() {
                 </div>
               </div>
             </a>
+            */}
             <button
               onClick={scrollToHowItWorks}
               className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 sm:px-5 sm:py-2.5 text-sm sm:text-xs font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 active:bg-white/15 w-full sm:w-auto"

@@ -65,7 +65,7 @@ export function Header() {
         
         <div className="flex items-center gap-4">
           <a
-            href="https://apps.apple.com/app/rememberher"
+            href="https://apps.apple.com/us/app/rememberher-relationship-ai/id6755442535"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-xl bg-gradient-to-r from-[#151928]/50 to-[#0c0f18]/50 px-5 py-2 text-sm font-semibold text-white backdrop-blur-sm transition hover:from-[#151928] hover:to-[#0c0f18] border border-[#E5A855]/20 hover:border-[#E5A855]/40 md:inline-flex"
@@ -107,7 +107,7 @@ export function Header() {
               </Link>
             )}
             <a
-              href="https://apps.apple.com/app/rememberher"
+              href="https://apps.apple.com/us/app/rememberher-relationship-ai/id6755442535"
               target="_blank"
               rel="noopener noreferrer"
               className="block rounded-xl bg-gradient-to-r from-[#151928]/50 to-[#0c0f18]/50 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:from-[#151928] hover:to-[#0c0f18] border border-[#E5A855]/20 hover:border-[#E5A855]/40 mt-4 text-center"
