@@ -53,6 +53,8 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
+    type: "website",
+    locale: "en_US",
     title: "RememberHer – Never forget the moments that matter",
     description:
       "RememberHer with LoveAI Assistant: chat, image analysis, smart reminders, gift inspiration, and partner insights so you never miss a meaningful moment again.",
@@ -60,10 +62,11 @@ export const metadata: Metadata = {
     siteName: "RememberHer",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://rememberher.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "RememberHer marketing preview",
+        type: "image/png",
       },
     ],
   },
@@ -72,7 +75,14 @@ export const metadata: Metadata = {
     title: "RememberHer – Never forget the moments that matter",
     description:
       "RememberHer with LoveAI Assistant: chat, image analysis, smart reminders, gift inspiration, and partner insights so you never miss a meaningful moment again.",
-    images: ["/og-image.png"],
+    images: ["https://rememberher.app/og-image.png"],
+    creator: "@rememberherapp",
+  },
+  verification: {
+    // Add verification codes when available
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+    // yahoo: "your-yahoo-verification-code",
   },
   robots: {
     index: true,
@@ -80,7 +90,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
   manifest: "/site.webmanifest",
 };

@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
   },
   // Compress output
   compress: true,
+  // PoweredBy header removal for security
+  poweredByHeader: false,
+  // React strict mode for better development experience
+  reactStrictMode: true,
   // Headers configuration
   async headers() {
     return [
@@ -33,14 +37,39 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://va.vercel-scripts.com https://vercel.com",
-              "style-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https:",
-              "font-src 'self' data:",
+              "font-src 'self' data: https://fonts.gstatic.com",
               "connect-src 'self' https://*.supabase.co https://vercel.live https://vitals.vercel-insights.com https://vercel.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
+              "object-src 'none'",
+              "upgrade-insecure-requests",
             ].join("; "),
+          },
+          {
+            key: "Permissions-Policy",
+            value: [
+              "camera=()",
+              "microphone=()",
+              "geolocation=()",
+              "interest-cohort=()",
+              "payment=()",
+              "usb=()",
+            ].join(", "),
+          },
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+          {
+            key: "Cross-Origin-Resource-Policy",
+            value: "same-origin",
+          },
+          {
+            key: "X-Permitted-Cross-Domain-Policies",
+            value: "none",
           },
           {
             key: "Strict-Transport-Security",
