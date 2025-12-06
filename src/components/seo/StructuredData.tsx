@@ -1,6 +1,6 @@
 "use client";
 
-import { FAQJsonLd, OrganizationJsonLd, ProductJsonLd } from "next-seo";
+import { FAQJsonLd, OrganizationJsonLd } from "next-seo";
 
 const faqEntries = [
   {
@@ -38,31 +38,10 @@ export function StructuredData() {
         }}
         sameAs={["https://www.instagram.com/rememberherapp"]}
       />
-      <ProductJsonLd
-        productName="RememberHer"
-        description="AI relationship assistant with LoveAI chat, image analysis, and smart reminders. Never forget anniversaries, gift ideas, or partner preferences."
-        brand="RememberHer"
-        images={["https://rememberher.app/og-image.png"]}
-        offers={{
-          price: "0",
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          url: "https://apps.apple.com/us/app/rememberher-relationship-ai/id6755442535",
-          seller: {
-            name: "RememberHer",
-          },
-        }}
-        aggregateRating={{
-          ratingValue: "4.8",
-          reviewCount: "127",
-        }}
-      />
       <FAQJsonLd
         questions={faqEntries.map((entry) => ({
-          name: entry.question,
-          acceptedAnswer: {
-            text: entry.answer,
-          },
+          question: entry.question,
+          answer: entry.answer,
         }))}
       />
     </>
