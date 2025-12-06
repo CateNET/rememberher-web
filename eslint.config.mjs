@@ -5,5 +5,8 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  next(),
+  next({
+    // Disable patching to avoid the warning
+    dirs: ['.'],
+  }),
 );
